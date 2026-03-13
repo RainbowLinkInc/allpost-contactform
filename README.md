@@ -2,14 +2,23 @@
 WordPress Plugin "All Post Contact Form" (  https://wordpress.org/plugins/allpost-contactform/  )
 
 === All Post Contact Form ===
+
 Contributors: rainbowlinkinc
+
 Donate link: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=wp
+
 Tags: contact form, email form, inquiry form
+
 Requires at least: 4.7.3
+
 Tested up to: 6.9
+
 Stable tag: 1.8.2
+
 Requires PHP: 8.0
+
 License: GPLv2 or later
+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin adds confirmation and completion screens to any HTML form and sends submitted data via email.
