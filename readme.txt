@@ -3,8 +3,8 @@ Contributors: rainbowlinkinc
 Donate link: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=wp
 Tags: contact form, email form, inquiry form
 Requires at least: 4.7.3
-Tested up to: 6.9
-Stable tag: 1.8.2
+Tested up to: 7.1
+Stable tag: 1.8.3
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -119,12 +119,6 @@ https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16#faq
 https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16#inquiry
 
 
-【Paid Add-Ons】
-- Auto Responder: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RL30&link_id=wp
-- Carbon Copy: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RL31&link_id=wp
-- Submission Notifications: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RL32&link_id=wp
-- Auto Responder + CC: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RL33&link_id=wp
-- CSV Export: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RL34&link_id=wp
 
 
 == Installation ==
@@ -163,6 +157,10 @@ https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16#faq
 
 
 == Changelog ==
+
+=1.8.3=
+Sep 15, 2026: A change in WordPress 7.1 caused a PHP fatal error in this plugin. We did not notice this issue until Sep 14, 2026, but fixed it with assistance from ChatGPT. We also fixed several other bugs, including a display issue in the cookie-related section and missing template sample files in the assets directory.
+
 =1.8.2=
 May 5, 2025: Fixed: Tag Errors
 

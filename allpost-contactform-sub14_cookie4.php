@@ -7,16 +7,7 @@
 *****************************************************/
 if(!defined('ABSPATH')){ die('Invalid request.'); }
 $apcf_onetime_ticket = "";
-if(!isset($_COOKIE['apcf_onetime_ticket'])){
-$apcf_onetime_ticket = $_COOKIE['apcf_onetime_ticket'];
- if(empty($apcf_onetime_ticket) || $apcf_onetime_ticket === "deleted"){
-    $apcf_onetime_ticket = md5(uniqid(rand(), true));
-    $apcf_onetime_id = $apcf_onetime_ticket;
- }else{
-    $apcf_onetime_id = md5(uniqid(rand(), true));
-    $apcf_onetime_ticket = "error".$apcf_onetime_id;
- }
-}else{
+if(isset($_COOKIE['apcf_onetime_ticket'])){
  $apcf_onetime_ticket = "";
  $apcf_onetime_ticket = $_COOKIE['apcf_onetime_ticket'];
  if(empty($apcf_onetime_ticket) || $apcf_onetime_ticket === "deleted"){
@@ -25,8 +16,16 @@ $apcf_onetime_ticket = $_COOKIE['apcf_onetime_ticket'];
  }else{ $apcf_onetime_id = md5(uniqid(rand(), true));
     $apcf_onetime_ticket = "error".$apcf_onetime_id;
  }
+}else{    
+$apcf_onetime_ticket = $_COOKIE['apcf_onetime_ticket'];
+ if(empty($apcf_onetime_ticket) || $apcf_onetime_ticket === "deleted"){
+    $apcf_onetime_ticket = md5(uniqid(rand(), true));
+    $apcf_onetime_id = $apcf_onetime_ticket;
+ }else{
+    $apcf_onetime_id = md5(uniqid(rand(), true));
+    $apcf_onetime_ticket = "error".$apcf_onetime_id;
+ }
 }
-
 $this_time_cookie = "'apcf_onetime_ticket','".$apcf_onetime_ticket."',1"; 
 echo '<script type="text/javascript">
 setAPCFCookie('.$this_time_cookie.');

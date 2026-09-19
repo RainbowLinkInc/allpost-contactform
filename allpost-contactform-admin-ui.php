@@ -11,15 +11,15 @@
  * @subpackage allpost-contactform
  */  
 if(!defined('ABSPATH')){ die('Invalid request.'); }  
- if ( is_admin() ) {
-    
+ 
+     
+    if(!class_exists('RL_APCFAdminUi')){  
     class RL_APCFAdminUi {
         
         var $file_path;
         
         public function __construct( $path){
             $this->file_path = $path;
-            $this->setUi();
         }
         
         public function setUi(){
@@ -289,8 +289,7 @@ if(!defined('ABSPATH')){ die('Invalid request.'); }
            </div>';
         }           
         
-           
+      } 
    
-    }
  }
-?>
+

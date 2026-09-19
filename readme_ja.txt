@@ -3,8 +3,8 @@ Contributors: rainbowlinkinc
 Donate link: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=wp
 Tags: contact form, email form, inquiry form
 Requires at least: 4.7.3
-Tested up to: 6.9
-Stable tag: 1.8.2
+Tested up to: 7.1
+Stable tag: 1.8.3
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -114,25 +114,6 @@ https://jp.Rainbow-Link.com/catalogue.htm?&item_no=RLF16ja#faq
 https://jp.Rainbow-Link.com/catalogue.htm?&item_no=RLF16ja#inquiry
 
 
-【有料アドオン紹介】
-▼自動返信機能
-https://jp.Rainbow-Link.com/catalogue.htm?&item_no=RL30ja&link_id=wp
-
-▼カーボンコピー機能
-https://jp.Rainbow-Link.com/catalogue.htm?&item_no=RL31ja&link_id=wp
-
-▼受信通知機能
-https://jp.Rainbow-Link.com/catalogue.htm?&item_no=RL32ja&link_id=wp
-
-▼自動返信＋カーボンコピー
-https://jp.Rainbow-Link.com/catalogue.htm?&item_no=RL33ja&link_id=wp
-
-▼CSV出力対応
-https://jp.Rainbow-Link.com/catalogue.htm?&item_no=RL34ja&link_id=wp
-
-
-
-
 == Installation ==
 1. WordPress管理画面「プラグイン」から本プラグインをインストール
 2. 同画面で有効化
@@ -185,6 +166,10 @@ plugins_list_zh.png
 
 
 == Changelog ==
+
+=1.8.3=
+Sep 15, 2026: WordPress7.1の仕様変更に伴い、PHP fatal errorのバグが発生しました。このバグには、2026年9月14日まで気づきませんでしたが、ChatGPTの支援を得てfixいたしました。その他、クッキー部分の表示の乱れのバグ、assetsファイルのテンプレートサンプルが消失していたバグなどを修正しました。
+
 =1.8.2=
 May 5, 2025: タグエラーを解消しました。
 

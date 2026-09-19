@@ -15,9 +15,11 @@ if($rl_apcf_cookie === "1"){ //--- If Cookie Enabled
 }
 ?>
 <input type="hidden" name="apcf_contact_id" value="<?php echo $apcf_onetime_id; ?>">
+<?php if($rl_apcf_cookie === "0"){ ?>
 <script type="text/javascript">
 document.write('<div id="apcf_confirmation_btn"><input value="<?php echo $rl_apcf_cbtn; ?>" type="submit" name="apcf_submit" class="btn_confirm"></div>');
 </script>
+<?php } ?>
 <noscript>
 <?php echo $rl_apcf_public_no_javascript_eg; ?>
 </noscript>

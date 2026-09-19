@@ -3,8 +3,8 @@
 Plugin Name: All Post Contact Form
 Plugin URI: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=wp
 Description: You can add a confirmation window and a submission window to your own html form(s) which you created, and send the data inputted into your html form to your E-mail address.
-Version: 1.8.2
-Stable tag: 1.8.2
+Version: 1.8.3
+Stable tag: 1.8.3
 Requires at least: 4.7.3
 Requires PHP: 8.0
 Author: RainbowLink Inc.
@@ -29,17 +29,56 @@ if(!defined('ABSPATH')){ die('Invalid request.'); }
         die;
     }
     
-    define( 'rl_apcf_dir_path', plugin_dir_path( __FILE__ ) );    
-    define( 'rl_apcf_URL_path', plugin_dir_url( __FILE__ ) );
+    if(defined('rl_apcf_dir_path')){
+    }else{
+      define( 'rl_apcf_dir_path', plugin_dir_path( __FILE__ ) );
+    }    
+    if(defined('rl_apcf_URL_path')){
+    }else{
+      define( 'rl_apcf_URL_path', plugin_dir_url( __FILE__ ) );
+    }
+    if(defined('rl_apcf_page_name')){
+    }else{
+      define( 'rl_apcf_page_name', 
+      'allpost-contactform' );
+    }
+    if(defined('rl_apcf_mainpage_URL')){
+    }else{
+      define( 'rl_apcf_mainpage_URL', 
+      'allpost-contactform.php' );
+    }
+    if(defined('rl_apcf_plugin_basename_URL')){
+    }else{
+      define( 'rl_apcf_plugin_basename_URL', 
+      'allpost-contactform/allpost-contactform.php' );
+    }
+    if(defined('rl_apcf_plugin_mainpage_fullPath')){
+    }else{
+      $rl_apcf_plugin_mainpage_fullPath_DIR = rl_apcf_dir_path.rl_apcf_mainpage_URL;
+      define( 'rl_apcf_plugin_mainpage_fullPath', $rl_apcf_plugin_mainpage_fullPath_DIR );
+    }
+    if(defined('rl_apcf_plugin_mainpage_fullURL')){
+    }else{
+      $rl_apcf_plugin_mainpage_fullPath_URL = rl_apcf_URL_path.rl_apcf_mainpage_URL;
+      define( 'rl_apcf_plugin_mainpage_fullURL', $rl_apcf_plugin_mainpage_fullPath_URL );
+    }
+    if(defined('rl_apcf_plugin_adminpage_fullURL')){
+    }else{
+      $rl_apcf_options_general_URL_inner = 'options-general.php?page='.rl_apcf_page_name;
+      $rl_apcf_options_general_URL = admin_url( $rl_apcf_options_general_URL_inner );
+      $rl_apcf_plugin_adminpage_fullPath_URL = $rl_apcf_options_general_URL;
+      define( 'rl_apcf_plugin_adminpage_fullURL', $rl_apcf_plugin_adminpage_fullPath_URL );
+    }
     include rl_apcf_dir_path.'allpost-contactform-language.php';
     include rl_apcf_dir_path.'allpost-contactform-admin-ui.php';
     
     
-    new RLAllPostContactForm();
+
     
+if(!class_exists('RL_APCF')){         
     class RL_APCF
     {
-        const VERSION = "1.8.2";
+        const VERSION = "1.8.3";
 	const SHORTCODE = "rlallpostcontactform";
         const OPTIONS = "allpost_contactform_options";
         
@@ -56,28 +95,56 @@ if(!defined('ABSPATH')){ die('Invalid request.'); }
         }
                
         public static function enqueue_css(){
-            wp_enqueue_style( 'allpost-contactform-style', plugins_url('allpost-contactform.css', __FILE__ ), array(), self::VERSION );
+	    $public_css_URL = rl_apcf_URL_path.'allpost-contactform.css';
+            wp_enqueue_style( 'allpost-contactform-style', $public_css_URL, array(), self::VERSION );
         }
 	
         public static function enqueue_admin_css(){
-            wp_enqueue_style( 'allpost-contactform-style', plugins_url('allpost-contactform-admin.css', __FILE__ ), array(), self::VERSION);
+	    $admin_css_URL = rl_apcf_URL_path.'allpost-contactform-admin.css';
+            wp_enqueue_style( 'allpost-contactform-style', $admin_css_URL, array(), self::VERSION);
         }
     }
+}    
+ 
     
-    
+if(!class_exists('RLAllPostContactForm')){        
     class RLAllPostContactForm{
         
         var $adminUi;
         
-        public function __construct(){
-            register_activation_hook(__FILE__, array(&$this,'rl_apcf_activation'));
-            add_action( 'admin_init', array(&$this,'rl_apcf_admin_init') );
-            add_action( 'admin_menu', array(&$this, 'rl_apcf_admin_menu'));
-            add_action( 'wp_enqueue_scripts', array(&$this,'rl_apcf_enqueue_css'));
-	    add_shortcode( RL_APCF::SHORTCODE, array(&$this,'disp_shortcode'));
-	    add_filter( 'using_the_plugin', 'do_shortcode');
-	    add_filter( 'plugin_action_links_'.plugin_basename( __FILE__ ), array( &$this, 'rl_apcf_add_action_links' ), 10, 4 );
-        }
+    public function __construct(){
+
+        $this->adminUi = new RL_APCFAdminUi(rl_apcf_plugin_adminpage_fullURL);
+
+        register_activation_hook(
+            rl_apcf_plugin_mainpage_fullPath,
+            array( $this, 'rl_apcf_activation' )
+        );
+        add_action(
+            'admin_init',
+            array( $this, 'rl_apcf_admin_init' )
+        );
+        add_action(
+            'admin_menu',
+            array( $this, 'rl_apcf_admin_menu' )
+        );
+        add_action(
+            'wp_enqueue_scripts',
+            array( $this, 'rl_apcf_enqueue_css' )
+        );
+        add_shortcode(
+            RL_APCF::SHORTCODE,
+            array( $this, 'disp_shortcode' )
+        );
+        add_filter( 'using_the_plugin', 'do_shortcode' );
+        add_filter(
+            'plugin_action_links_' .rl_apcf_mainpage_URL,
+            array( $this, 'rl_apcf_add_action_links' ),
+            10,
+            4
+        );
+    }
+    
         
         function rl_apcf_activation() {
             $option = RL_APCF::get_option();
@@ -111,17 +178,23 @@ if(!defined('ABSPATH')){ die('Invalid request.'); }
         function rl_apcf_admin_init() {
             include rl_apcf_dir_path.'allpost-contactform-language.php';
             RL_APCF::enqueue_admin_css();
-            $this->adminUi = new RL_APCFAdminUi(__FILE__);
+            $this->adminUi->setUi();
         }
         
         public function rl_apcf_admin_menu() {
             include rl_apcf_dir_path.'allpost-contactform-language.php';
-            add_options_page($rl_apcf_admin_Menu_Title, $rl_apcf_admin_Menu_Title, 'administrator', __FILE__, array(&$this->adminUi, 'disp_admin_page'));
+            add_options_page(
+                    $rl_apcf_admin_Menu_Title,
+                    $rl_apcf_admin_Menu_Title,
+                    'manage_options',
+                    'allpost-contactform',
+            array( $this->adminUi, 'disp_admin_page' )
+            );
         }
         
 	function rl_apcf_add_action_links( $links ) {
             include 'allpost-contactform-language.php';
-	    $rl_apcf_link_settings = '<a href="'.admin_url( 'options-general.php?page=allpost-contactform/allpost-contactform.php').'">'.$rl_apcf_plugin_list_settings.'</a>';
+	    $rl_apcf_link_settings = '<a href="'.rl_apcf_plugin_adminpage_fullURL.'">'.$rl_apcf_plugin_list_settings .'</a>';
 	    $rl_apcf_link_faq = '<a href="https://www.rainbow-link.com/FAQ.htm?&faq_cate=47" target="_blank">FAQ</a>';
             $rl_apcf_links = array($rl_apcf_link_settings,$rl_apcf_link_faq);
             return array_merge( $links, $rl_apcf_links );
@@ -149,7 +222,12 @@ if(!defined('ABSPATH')){ die('Invalid request.'); }
 	    }
         
     }
-    
+}
+
+
+
+ 
+if(!class_exists('RLAPCF_Start')){        
     class RLAPCF_Start{
         var $rlapcf_mail;
         var $rlapcf_mailsender;
@@ -188,5 +266,11 @@ if(!defined('ABSPATH')){ die('Invalid request.'); }
             $this->rlapcf_saveattinserver = sanitize_text_field($options['rlapcf_saveattinserver']);
         }
     }
-    
+}    
 
+
+
+
+
+    new RLAllPostContactForm();
+    
