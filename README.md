@@ -3,7 +3,7 @@ WordPress Plugin "All Post Contact Form" (  https://wordpress.org/plugins/allpos
 
 === All Post Contact Form ===
 Contributors: rainbowlinkinc
-Donate link: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=wp
+Donate link: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=gh
 Tags: contact form, email form, inquiry form
 Requires at least: 4.7.3
 Tested up to: 7.1
