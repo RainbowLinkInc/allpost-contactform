@@ -61,5 +61,6 @@ https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16#faq
 ▼Please contact the official developer site for support:
 https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16#inquiry
 
-
-
+【Latest Update】
+=1.8.3=
+Sep 15, 2026: A change in WordPress 7.1 caused a PHP fatal error in this plugin. We did not notice this issue until Sep 14, 2026, but fixed it with assistance from ChatGPT-5.6 Sol. We also fixed several other bugs, including a display issue in the cookie-related section and missing template sample files in the assets directory.
