@@ -11,7 +11,7 @@ Tags: contact form, email form, inquiry form
 
 Requires at least: 4.7.3
 
-Tested up to: 7.1.1
+Tested up to: 7.1.2
 
 Stable tag: 1.8.3
 
