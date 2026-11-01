@@ -3,8 +3,8 @@
 Plugin Name: All Post Contact Form
 Plugin URI: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=wp
 Description: You can add a confirmation window and a submission window to your own html form(s) which you created, and send the data inputted into your html form to your E-mail address.
-Version: 1.8.3
-Stable tag: 1.8.3
+Version: 1.8.4
+Stable tag: 1.8.4
 Requires at least: 4.7.3
 Requires PHP: 8.0
 Author: RainbowLink Inc.
@@ -78,7 +78,7 @@ if(!defined('ABSPATH')){ die('Invalid request.'); }
 if(!class_exists('RL_APCF')){         
     class RL_APCF
     {
-        const VERSION = "1.8.3";
+        const VERSION = "1.8.4";
 	const SHORTCODE = "rlallpostcontactform";
         const OPTIONS = "allpost_contactform_options";
         

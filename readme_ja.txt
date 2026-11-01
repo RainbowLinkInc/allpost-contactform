@@ -4,7 +4,7 @@ Donate link: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=w
 Tags: contact form, email form, inquiry form
 Requires at least: 4.7.3
 Tested up to: 7.1.4
-Stable tag: 1.8.3
+Stable tag: 1.8.4
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -166,6 +166,9 @@ plugins_list_zh.png
 
 
 == Changelog ==
+
+=1.8.4=
+Nov 1, 2026: 2026年10月24日に、本プラグインの有料アドオンの販売を終了いたしました。それに伴い、coreファイル (allpost-contactform-core.php) から有料アドオンのための設定を削除しました。
 
 =1.8.3=
 Sep 15, 2026: WordPress7.1の仕様変更に伴い、PHP fatal errorのバグが発生しました。このバグには、2026年9月14日まで気づきませんでしたが、ChatGPT-5.6 Solの支援を得てfixいたしました。その他、クッキー部分の表示の乱れのバグ、assetsファイルのテンプレートサンプルが消失していたバグなどを修正しました。

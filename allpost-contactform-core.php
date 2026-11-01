@@ -7,24 +7,6 @@ if(!defined('ABSPATH')){ die('Invalid request.'); }
 include plugin_dir_path( __FILE__ )."allpost-contactform-sub1_security.php"; 
 include plugin_dir_path( __FILE__ )."allpost-contactform-language.php"; 
 include plugin_dir_path( __FILE__ )."allpost-contactform-sub2_define1.php";
-//=== Add-Ons ============================================
-//Add-On: AutoResponder & Carbon Copy
-if(file_exists(plugin_dir_path( __FILE__ )."addon_autoresponder_and_cc.php")){
-include plugin_dir_path( __FILE__ )."addon_autoresponder_and_cc.php"; 
-//Add-On: AutoResponder
-}elseif(file_exists(plugin_dir_path( __FILE__ )."addon_autoresponder.php")){
-include plugin_dir_path( __FILE__ )."addon_autoresponder.php"; 
-//Add-On: Carbon Copy
-}elseif(file_exists(plugin_dir_path( __FILE__ )."addon_cc.php")){
-include plugin_dir_path( __FILE__ )."addon_cc.php"; 
-//Add-On: Receiving Notice
-}elseif(file_exists(plugin_dir_path( __FILE__ )."addon_receiving_notice.php")){
-include plugin_dir_path( __FILE__ )."addon_receiving_notice.php"; 
-//Add-On: CSV
-}elseif(file_exists(plugin_dir_path( __FILE__ )."addon_csv.php")){
-include plugin_dir_path( __FILE__ )."addon_csv.php"; 
-//=== Core ===============================================
-}else{
 include plugin_dir_path( __FILE__ )."allpost-contactform-sub3_define2.php";
 if($rl_apcf_cookie === "1"){
  include plugin_dir_path( __FILE__ )."allpost-contactform-sub4_cookie1.php";
@@ -58,7 +40,7 @@ if(!isset($_POST['apcf_submit'])){ /*:::::: Confirmation Window 3【END】::::::
 ?>
 </div><!-- #window_* -->
 </div><!-- .apcf_outline -->
-<?php } //======================================================
+<?php 
 if(isset($_POST['apcf_submit'])){ /*:::::: Submission Window 3【END】:::::::::*/ 
 include plugin_dir_path( __FILE__ )."allpost-contactform-sub16_SW3.php";
 } 
