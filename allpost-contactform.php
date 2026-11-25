@@ -3,8 +3,8 @@
 Plugin Name: All Post Contact Form
 Plugin URI: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=wp
 Description: You can add a confirmation window and a submission window to your own html form(s) which you created, and send the data inputted into your html form to your E-mail address.
-Version: 1.8.4
-Stable tag: 1.8.4
+Version: 1.8.6
+Stable tag: 1.8.6
 Requires at least: 4.7.3
 Requires PHP: 8.0
 Author: RainbowLink Inc.
@@ -78,7 +78,7 @@ if(!defined('ABSPATH')){ die('Invalid request.'); }
 if(!class_exists('RL_APCF')){         
     class RL_APCF
     {
-        const VERSION = "1.8.4";
+        const VERSION = "1.8.6";
 	const SHORTCODE = "rlallpostcontactform";
         const OPTIONS = "allpost_contactform_options";
         
@@ -138,7 +138,7 @@ if(!class_exists('RLAllPostContactForm')){
         );
         add_filter( 'using_the_plugin', 'do_shortcode' );
         add_filter(
-            'plugin_action_links_' .rl_apcf_mainpage_URL,
+            'plugin_action_links_' .rl_apcf_plugin_basename_URL,
             array( $this, 'rl_apcf_add_action_links' ),
             10,
             4
@@ -195,7 +195,7 @@ if(!class_exists('RLAllPostContactForm')){
 	function rl_apcf_add_action_links( $links ) {
             include 'allpost-contactform-language.php';
 	    $rl_apcf_link_settings = '<a href="'.rl_apcf_plugin_adminpage_fullURL.'">'.$rl_apcf_plugin_list_settings .'</a>';
-	    $rl_apcf_link_faq = '<a href="https://www.rainbow-link.com/FAQ.htm?&faq_cate=47" target="_blank">FAQ</a>';
+	    $rl_apcf_link_faq = '<a href="'.$rl_apcf_faq_URL_adminMenu.'" target="_blank">FAQ</a>';
             $rl_apcf_links = array($rl_apcf_link_settings,$rl_apcf_link_faq);
             return array_merge( $links, $rl_apcf_links );
         }

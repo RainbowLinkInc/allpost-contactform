@@ -88,3 +88,6 @@ $rl_apcf_admin_sa3_MalwareScannerPlugins = 'この機能をオンにする場合
 $rl_apcf_admin_options_H2_6 = '"allpost-contactform.jsの"読み込み設定';
 $rl_apcf_admin_js1 = '<a href="https://jp.Rainbow-Link.com/FAQ.htm?&faq_id=179" target="_blank">"allpost-contactform.js"を読み込むかどうか</a> ( 読み込む場合：1 | 読み込まない場合：0 )';
 $rl_apcf_admin_js1_eg = '0';
+
+/* since v1.8.6 */
+$rl_apcf_faq_URL_adminMenu = 'https://jp.Rainbow-Link.com/FAQ.htm?&faq_cate=48';

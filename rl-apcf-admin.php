@@ -86,3 +86,7 @@ $rl_apcf_admin_sa3_MalwareScannerPlugins = 'If you would to turn on this feature
 $rl_apcf_admin_options_H2_6 = '"allpost-contactform.js" settings';
 $rl_apcf_admin_js1 = '<a href="https://www.Rainbow-Link.com/FAQ.htm?&faq_id=177" target="_blank">Whether to load "allpost-contactform.js"</a> ( If load: 1 | If not load: 0 )';
 $rl_apcf_admin_js1_eg = '0';
+
+/* since v1.8.6 */
+$rl_apcf_faq_URL_adminMenu = 'https://www.Rainbow-Link.com/FAQ.htm?&faq_cate=47';
+

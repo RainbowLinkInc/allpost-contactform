@@ -111,3 +111,5 @@ $rl_apcf_admin_js1 = '
 ما إذا كان سيتم تحميل "allpost-contactform.js" (في حالة التحميل: 1 | في حالة عدم التحميل: 0) ';
 $rl_apcf_admin_js1_eg = '0';
 
+/* since v1.8.6 */
+$rl_apcf_faq_URL_adminMenu = 'https://www.Rainbow-Link.com/FAQ.htm?&faq_cate=47';

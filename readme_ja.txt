@@ -3,8 +3,8 @@ Contributors: rainbowlinkinc
 Donate link: https://www.Rainbow-Link.com/catalogue.htm?&item_no=RLF16&link_id=wp
 Tags: contact form, email form, inquiry form
 Requires at least: 4.7.3
-Tested up to: 7.1.4
-Stable tag: 1.8.4
+Tested up to: 7.1.5
+Stable tag: 1.8.6
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -166,6 +166,12 @@ plugins_list_zh.png
 
 
 == Changelog ==
+
+=1.8.6=
+Nov 26, 2026:　管理者メニューのFAQのURLを言語別に設定しました。現在は、英語と日本語の２言語に対応しています。
+
+=1.8.5=
+Nov 20, 2026:　管理者メニュー (設定, FAQ) を復活させました。
 
 =1.8.4=
 Nov 1, 2026: 2026年10月24日に、本プラグインの有料アドオンの販売を終了いたしました。それに伴い、coreファイル (allpost-contactform-core.php) から有料アドオンのための設定を削除しました。
